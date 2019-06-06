@@ -1,6 +1,5 @@
 from django.shortcuts import render
-
-# Create your views here.
+from . models import Profile
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
@@ -21,6 +20,7 @@ def register(request):
 
 @login_required
 def profile(request):
+    
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
@@ -43,5 +43,6 @@ def profile(request):
     return render(request, 'users/profile.html', context)
 
 def profilelist(request):
-    profiles = Profile.objects.all()
-    return render (request, 'users/profile_list.html', {'profiles': profiles})
+    current_user = request.user
+    profiles = Profile.objects.filter(user=current_user)
+    return render (request, 'users/profile_list.html',{"profiles":profiles, "current_user":current_user})
