@@ -2,6 +2,29 @@
 
 {% block content %}
 <h2>
-    heyy87
+    NEIGHBOURHOODS
 </h2>
+{% for business in businesses %}
+<div class="card mb-3" id="hood-img">
+    <div class="row">
+        <div class="col-md-8">
+            <img src="{{ business.hood_id.image.url }}" class="card-img-top" >
+            <div class="card-body">
+                <h3 class="card-title">{{business.hood_id.name}}</h3>
+                <p class="card-text"><small class="text-muted">Last updated {{business.hood_id.timestamp|timesince}}</small></p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h3>Population: {{business.hood_id.population}}</h3>
+            <p class="card-text"><small>Description: {{business.hood_id.description}}</small></p><br>
+            <span>
+                Admin name: {{business.hood_id.admin}}
+            </span>
+            <p>
+                Businesses in this area: {{businesses|length}}
+            </p>
+        </div>
+    </div>
+</div>
+{% endfor %}
 {% endblock content %}
