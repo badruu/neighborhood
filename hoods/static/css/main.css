@@ -13,7 +13,7 @@ body {
   }
   
   .bg-steel {
-    background-color: #5f788a;
+    background-color: #000f96;
   }
   
   .site-header .navbar-nav .nav-link {
@@ -82,3 +82,22 @@ body {
   .account-heading {
     font-size: 2.5rem;
   }
+#hood-img
+{
+  height: 100%;
+  width: 100%;
+}
+.jumbotron
+{
+  margin-left: 2%;
+  margin-top: 2%;
+}
+#profile-list
+{
+  margin-left: 0%;
+  margin-top: 2%;
+}
+.location
+{
+  margin-left: 2%;
+}
