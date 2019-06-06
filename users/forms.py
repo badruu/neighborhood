@@ -1,16 +1,17 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile
+from .models import *
+from django.db import models
 
 
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
-
+    roles = forms.CharField(max_length=20)
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'email', 'password1', 'password2','roles']
 
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()
@@ -22,4 +23,4 @@ class UserUpdateForm(forms.ModelForm):
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['image']
+        fields = ['image', 'role','neighbourhood_id']
