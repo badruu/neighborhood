@@ -1,6 +1,15 @@
 {% extends "hoods/base.html" %}
 {% load crispy_forms_tags %}
 {% block content%}
+<h1>
+        heyy {{current_user}}
+    </h1>
+{% for profile in profiles %}
+
+<h2>
+    heyy{{profile.user}}
+</h2>
+{% endfor %}
     <div class="content-section">
         <div class="media">
           <img class="rounded-circle account-img" src=" {{ user.profile.image.url }} ">
