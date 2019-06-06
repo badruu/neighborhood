@@ -1,6 +1,6 @@
-# AWWARDS
+# NEIGHBORHOODS
 
-This is a webapp for rating projects. It mirrors [awwards](https://www.awwwards.com/).
+This is a webapp to get information about your neighborhoods, business present and the current opulation.
 
 ## Getting Started
 
@@ -63,7 +63,7 @@ You may follow this [document](https://gist.github.com/newtonkiragu/42f2500e56d9
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/badruu/awwards/blob/master/license) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/badruu/neighborhood/blob/master/license) file for details
 
 ## Acknowledgments
 
