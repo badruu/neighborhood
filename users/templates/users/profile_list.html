@@ -3,15 +3,30 @@
     {% for profile in profiles %}
     <div class="row">
         <div class="col-md-3">
-            <img class="rounded-circle account-img" src=" {{ profile.image.url }} ">
+            <div class="jumbotron">
+                <div id="profile-list">
+                    <img class="rounded-circle account-img" src=" {{ profile.image.url }} "><br>
+                    <h3>{{profile.user}}</h3>
+                    <p>
+                        Role: {{profile.role}}
+                    </p>
+                </div>
+            </div>
         </div>
         <div class="col-md-8">
-            <div class="col-md-2">
-                <p>{{profile.user}}</p>
-            </div>
-            <div class="col-md-2">
-                <p>{{profile.bio}}</p>
-            </div>
+                <h2>
+                    MY NEIGHBOURHOOD
+                </h2>
+                <img src="{{profile.neighbourhood_id.image.url}}" alt=""><br><br>
+                <div>
+                    <p><i class="fas fa-compass"></i><strong class="location">{{profile.neighbourhood_id.location}}</strong></p>
+                    <p><i class="fas fa-history"></i><strong class="location">Since {{profile.neighbourhood_id.timestamp|timesince}} ago</strong></p>
+                    <p><i class="fas fa-users"></i><strong class="location">{{profile.neighbourhood_id.population}}</strong></p>
+                    <p><i class="fas fa-question-circle"></i><strong class="location">{{profile.neighbourhood_id.description}}</strong></p>
+                </div>
+                
+                
+                
         </div>
     </div>
     {% endfor %}
